@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<button id="btn1">OK</button>
+	<script src="jq.js"></script>
+	<script type="text/javascript">
+		var obtn = document.getElementById("btn1");
+		obtn.onclick = function(){
+			new Promise(function(resolve, reject){
+				$.ajax({
+					url: "http://localhost/1.php",
+					success: function(data){
+						console.log(data);
+						resolve();
+					},
+					error: function(msg){
+						reject();
+					}
+				})
+			}).then(function(){
+				$.ajax({
+					url: "1.txt",
+					success: function(data){
+						console.log(data);
+					}
+				})
+			}).catch(function(msg){
+				alert("请求出现错误" + msg);
+			})
+			//alert("1");
+		}
+	</script>
+</body>
+</html>

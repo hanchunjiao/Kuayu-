@@ -1,2 +1,2 @@
 first push three methods for kuayu
-:CORS,jsonp,·şÎñÆ÷´úÀí
+:CORS,jsonp,æœåŠ¡å™¨ä»£ç†
